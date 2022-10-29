@@ -27,6 +27,9 @@ const theme: DefaultTheme = {
 		deepgray: '#383535',
 		black: '#000000',
 	},
+	device: {
+		laptop: `screen and (min-width: 480px)`,
+	},
 };
 
 export default theme;
