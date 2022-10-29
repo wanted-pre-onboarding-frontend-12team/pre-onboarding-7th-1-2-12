@@ -1,5 +1,19 @@
-import { Layout } from './components';
+import { ThemeProvider } from 'styled-components';
 
-export default function App() {
-	return <Layout>Hello !</Layout>;
+import { Layout } from './components';
+import Router from './router';
+import { theme } from './styles';
+
+function App() {
+	const isLogged: boolean = Boolean(localStorage.getItem('accessToken'));
+
+	return (
+		<ThemeProvider theme={theme}>
+			<Layout>
+				<Router />
+			</Layout>
+		</ThemeProvider>
+	);
 }
+
+export default App;
