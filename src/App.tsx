@@ -1,5 +1,10 @@
 import { Layout } from './components';
+import Router from './router';
 
 export default function App() {
-	return <Layout>Hello !</Layout>;
+	return (
+		<Layout>
+			<Router />
+		</Layout>
+	);
 }
