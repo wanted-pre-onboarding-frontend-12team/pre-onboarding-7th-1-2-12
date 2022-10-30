@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import CommonTitle from '../../shared/Title';
-import IssueComment from '../feature/IssueComment';
-import IssueNum from '../feature/IssueNum';
-import IssueTime from '../feature/IssueTime';
-import IssueWriter from '../feature/IssueWriter';
+import CommonTitle from '../../../shared/Title';
+import { IssueWriter, IssueComment, IssueTime, IssueNum } from '../../';
 import { IssueLayout, BorderLine } from './styled';
 
 export default function Issue({ issueItem, userItem }: any) {
