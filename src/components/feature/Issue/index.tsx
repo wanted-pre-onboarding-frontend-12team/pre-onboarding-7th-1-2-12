@@ -12,7 +12,7 @@ export default function Issue({ issueItem, userItem }: any) {
 	return (
 		<IssueLayout>
 			<div className="title">
-				<CommonTitle style={style}>
+				<CommonTitle>
 					{title}
 					<IssueNumber issueNumber={number} />
 				</CommonTitle>

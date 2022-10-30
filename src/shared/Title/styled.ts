@@ -1,5 +1,3 @@
 import styled, { CSSProperties } from 'styled-components';
 
-export const TitleLayout = styled.section((props: CSSProperties) => ({
-	...props,
-}));
+export const TitleLayout = styled.section((props: CSSProperties) => ({}));
