@@ -6,6 +6,6 @@ type Props = {
 	style?: CSSProperties;
 };
 
-export default function Title({ children, ...style }: Props) {
-	return <TitleLayout {...style}>{children}</TitleLayout>;
+export default function Title({ children }: Props) {
+	return <p>{children}</p>;
 }

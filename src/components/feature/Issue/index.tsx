@@ -1,13 +1,12 @@
 import React from 'react';
 
-import CommonTitle from '../../../shared/Title';
-import { IssueWriter, IssueNumber, IssueTime, IssueComment } from '../../';
+import Title from '../../../shared/Title';
+import { IssueWriter, IssueComment, IssueTime, IssueNumber } from '../../';
 import { IssueLayout, BorderLine } from './styled';
 import { useNavigate } from 'react-router-dom';
 
 export default function Issue({ issueItem, userItem }: any) {
 	const navigate = useNavigate();
-	const style = {};
 	const { comments, number, title, created_at, updated_at } = issueItem;
 	const { login, html_url, avatar_url } = userItem;
 
@@ -19,10 +18,10 @@ export default function Issue({ issueItem, userItem }: any) {
 					navigate(`/detail/${number}`);
 				}}
 			>
-				<CommonTitle style={style}>
+				<Title>
 					{title}
 					<IssueNumber issueNumber={number} />
-				</CommonTitle>
+				</Title>
 			</div>
 			<IssueWriter writerName={login} />
 			<div className="IssueInfo">

@@ -47,24 +47,41 @@ const IssueProvider = ({ children }: Props) => {
 			};
 			return data;
 		});
+	const [target, setTarget] = useState('');
+	const [page, setPage] = useState(0);
+	const defaultPage = 8;
+	const isLastIssue = issueList.length < page - defaultPage;
+	const loadingMessage = isLastIssue ? '' : '로딩 중∙∙∙';
 
-	async function fetchIssues() {
-		dispatch({ type: 'STATUS_LOADING' });
-		try {
-			const data: [] = await getIssues();
-			setIssue(data);
-			dispatch({ type: 'STATUS_END' });
-		} catch (err) {
-			dispatch({ type: 'STATUS_ERROR' });
+	const onIntersect = ([entry]: any) => {
+		if (entry.isIntersecting) {
+			setPage((perv: number) => perv + defaultPage);
 		}
-	}
+	};
+
 	useEffect(() => {
-		fetchIssues();
-	}, []);
+		let observer: any;
+		if (target) {
+			observer = new IntersectionObserver(onIntersect, { threshold: 1 });
+			observer.observe(target);
+		}
+		return () => observer?.disconnect();
+	}, [target]);
+
+	const getList = () => {
+		getIssues(page).then((data: any) => {
+			setIssue(data);
+		});
+	};
+
+	useEffect(() => {
+		!isLastIssue && getList();
+	}, [page]);
 
 	if (loading) return <Loading />;
 	if (error) return <Error />;
-	return <IssueContext.Provider value={{ issueList, newUserList }}>{children}</IssueContext.Provider>;
+
+	return <IssueContext.Provider value={{ issueList, newUserList, setTarget, loadingMessage }}>{children}</IssueContext.Provider>;
 };
 
 export default IssueProvider;
