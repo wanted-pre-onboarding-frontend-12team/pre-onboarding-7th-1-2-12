@@ -1,19 +1,13 @@
-import { ThemeProvider } from 'styled-components';
-
 import { Layout } from './components';
 import Router from './router';
-import { theme } from './styles';
+import IssueProvider from './constants/IssueProvider';
 
-function App() {
-	const isLogged: boolean = Boolean(localStorage.getItem('accessToken'));
-
+export default function App() {
 	return (
-		<ThemeProvider theme={theme}>
+		<IssueProvider>
 			<Layout>
 				<Router />
 			</Layout>
-		</ThemeProvider>
+		</IssueProvider>
 	);
 }
-
-export default App;
