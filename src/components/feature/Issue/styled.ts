@@ -29,6 +29,7 @@ export const BorderLine = styled.div`
 	background: #000000;
 	margin: 10px 0;
 	@media ${({ theme }) => theme.device.laptop} {
+		height: 2px;
 		margin: 20px 0;
 	}
 `;
