@@ -22,10 +22,6 @@ export default function useInfinityScroll() {
 	};
 
 	useEffect(() => {
-		!isLastIssue && getList();
-	}, [page]);
-
-	useEffect(() => {
 		let observer: any;
 		if (target) {
 			observer = new IntersectionObserver(onIntersect, { threshold: 1 });
@@ -34,5 +30,9 @@ export default function useInfinityScroll() {
 		return () => observer?.disconnect();
 	}, [target]);
 
-	return { issueList, setTarget, isLastIssue, loadingMessage };
+	useEffect(() => {
+		!isLastIssue && getList();
+	}, [page]);
+
+	return { issueList, setTarget, loadingMessage };
 }

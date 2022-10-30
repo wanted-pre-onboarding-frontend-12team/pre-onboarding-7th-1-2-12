@@ -1,17 +1,22 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { getIssues } from '../apis/Issue';
 import { Issue, User } from '../utils/interface';
-
+import { useStatusState, useStatusDispatch } from './useStatus';
+import Loading from '../components/Loading/index';
+import Error from '../pages/Error';
 export const IssueContext = createContext({});
 
 interface Props {
-	children: JSX.Element | JSX.Element[];
+	children: React.ReactNode;
 }
 
 const IssueProvider = ({ children }: Props) => {
 	const [issue, setIssue] = useState<any>([{}]);
+	const state: any = useStatusState();
+	const dispatch: any = useStatusDispatch();
+	const { loading, error } = state.status;
 
-	const issueList: [] =
+	const issueList: any =
 		issue &&
 		issue.map((el: any) => {
 			let issues: Issue = {
@@ -32,7 +37,7 @@ const IssueProvider = ({ children }: Props) => {
 			return el.user;
 		});
 
-	const newUserList: [] =
+	const newUserList: any =
 		userList &&
 		userList.map((el: any) => {
 			let data: User = {
@@ -42,16 +47,42 @@ const IssueProvider = ({ children }: Props) => {
 			};
 			return data;
 		});
+	const [target, setTarget] = useState('');
+	const [page, setPage] = useState(0);
+	const defaultPage = 8;
+	const isLastIssue = issueList.length < page - defaultPage;
+	const loadingMessage = isLastIssue ? '' : '로딩 중∙∙∙';
 
-	async function fetchIssues() {
-		const data: [] = await getIssues();
-		setIssue(data);
-	}
+	const onIntersect = ([entry]: any) => {
+		if (entry.isIntersecting) {
+			setPage((perv: number) => perv + defaultPage);
+		}
+	};
+
 	useEffect(() => {
-		fetchIssues();
-	}, []);
+		let observer: any;
+		if (target) {
+			observer = new IntersectionObserver(onIntersect, { threshold: 1 });
+			observer.observe(target);
+		}
+		return () => observer?.disconnect();
+	}, [target]);
 
-	return <IssueContext.Provider value={{ issueList, newUserList }}>{children}</IssueContext.Provider>;
+	const getList = () => {
+		getIssues(page).then((data: any) => {
+			setIssue(data);
+		});
+	};
+
+	useEffect(() => {
+		!isLastIssue && getList();
+	}, [page]);
+
+	if (loading) return <Loading />;
+	if (error) return <Error />;
+	console.log(issue);
+
+	return <IssueContext.Provider value={{ issueList, newUserList, setTarget, loadingMessage }}>{children}</IssueContext.Provider>;
 };
 
 export default IssueProvider;
