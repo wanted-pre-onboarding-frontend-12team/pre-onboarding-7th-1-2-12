@@ -11,7 +11,7 @@ const theme: DefaultTheme = {
 		small: pixelToRem(12),
 		normal: pixelToRem(16),
 		medium: pixelToRem(20),
-		large: pixelToRem(24),
+		large: pixelToRem(25),
 	},
 	fontWeights: {
 		light: 300,
