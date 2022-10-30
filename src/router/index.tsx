@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { Avatar } from '../components';
 import { checkArray } from '../utils/checkArray';
@@ -32,14 +32,12 @@ export default function Router() {
 	];
 
 	return (
-		<BrowserRouter>
-			<Routes>
-				{checkArray(routeList) &&
-					routeList.map(({ id, path, element }) => {
-						return <Route key={id} path={path} element={element} />;
-					})}
-			</Routes>
-		</BrowserRouter>
+		<Routes>
+			{checkArray(routeList) &&
+				routeList.map(({ id, path, element }) => {
+					return <Route key={id} path={path} element={element} />;
+				})}
+		</Routes>
 	);
 }
 
