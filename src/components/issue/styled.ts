@@ -1,21 +1,20 @@
 import styled from 'styled-components';
 
 export const IssueLayout = styled.section`
-	background-color: #d9d9d9;
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
 	.title {
 		display: flex;
 		align-items: end;
-		font-size: ${({ theme }) => theme.fontSizes.normal};
-		@media ${({ theme }) => theme.device.laptop} {
-			font-size: ${({ theme }) => theme.fontSizes.large};
-		}
 	}
 	gap: 7px;
 	@media ${({ theme }) => theme.device.laptop} {
 		gap: 12px;
+	}
+	font-size: ${({ theme }) => theme.fontSizes.normal};
+	@media ${({ theme }) => theme.device.laptop} {
+		font-size: ${({ theme }) => theme.fontSizes.large};
 	}
 	.IssueInfo {
 		display: flex;
