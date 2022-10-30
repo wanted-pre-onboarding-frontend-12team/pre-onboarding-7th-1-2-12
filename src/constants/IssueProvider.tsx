@@ -1,17 +1,22 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { getIssues } from '../apis/Issue';
 import { Issue, User } from '../utils/interface';
-
+import { useStatusState, useStatusDispatch } from './useStatus';
+import Loading from '../components/Loading/index';
+import Error from '../pages/Error';
 export const IssueContext = createContext({});
 
 interface Props {
-	children: JSX.Element | JSX.Element[];
+	children: React.ReactNode;
 }
 
 const IssueProvider = ({ children }: Props) => {
 	const [issue, setIssue] = useState<any>([{}]);
+	const state: any = useStatusState();
+	const dispatch: any = useStatusDispatch();
+	const { loading, error } = state.status;
 
-	const issueList: [] =
+	const issueList: any =
 		issue &&
 		issue.map((el: any) => {
 			let issues: Issue = {
@@ -32,7 +37,7 @@ const IssueProvider = ({ children }: Props) => {
 			return el.user;
 		});
 
-	const newUserList: [] =
+	const newUserList: any =
 		userList &&
 		userList.map((el: any) => {
 			let data: User = {
@@ -44,13 +49,21 @@ const IssueProvider = ({ children }: Props) => {
 		});
 
 	async function fetchIssues() {
-		const data: [] = await getIssues();
-		setIssue(data);
+		dispatch({ type: 'STATUS_LOADING' });
+		try {
+			const data: [] = await getIssues();
+			setIssue(data);
+			dispatch({ type: 'STATUS_END' });
+		} catch (err) {
+			dispatch({ type: 'STATUS_ERROR' });
+		}
 	}
 	useEffect(() => {
 		fetchIssues();
 	}, []);
 
+	if (loading) return <Loading />;
+	if (error) return <Error />;
 	return <IssueContext.Provider value={{ issueList, newUserList }}>{children}</IssueContext.Provider>;
 };
 
