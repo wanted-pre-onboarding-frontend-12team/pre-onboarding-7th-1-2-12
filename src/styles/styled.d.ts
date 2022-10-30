@@ -22,6 +22,7 @@ declare module 'styled-components' {
 		};
 		colors: {
 			white: '#FFFFFF';
+			gray: '#808080';
 			lightgray: '#D9D9D9';
 			deepgray: '#383535';
 			black: '#000000';
