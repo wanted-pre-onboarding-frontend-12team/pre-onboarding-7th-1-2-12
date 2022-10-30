@@ -1,17 +1,18 @@
-import { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { getIssues } from '../apis/Issue';
 import { Issue, User } from '../utils/interface';
+
 export const IssueContext = createContext({});
 
 interface Props {
 	children: JSX.Element | JSX.Element[];
 }
 
-export const IssueProvider = ({ children }: Props) => {
+const IssueProvider = ({ children }: Props) => {
 	const [issue, setIssue] = useState<any>([{}]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const issueList =
+	const issueList: [] =
 		issue &&
 		issue.map((el: any) => {
 			let issues: Issue = {
@@ -32,7 +33,7 @@ export const IssueProvider = ({ children }: Props) => {
 			return el.user;
 		});
 
-	const newUserList =
+	const newUserList: [] =
 		userList &&
 		userList.map((el: any) => {
 			let data: User = {
@@ -49,8 +50,9 @@ export const IssueProvider = ({ children }: Props) => {
 	}
 	useEffect(() => {
 		fetchIssues();
-		setIsLoading(true);
 	}, []);
-	if (isLoading) return null;
+
 	return <IssueContext.Provider value={{ issueList, newUserList }}>{children}</IssueContext.Provider>;
 };
+
+export default IssueProvider;
