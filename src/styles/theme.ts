@@ -11,7 +11,7 @@ const theme: DefaultTheme = {
 		small: pixelToRem(12),
 		normal: pixelToRem(16),
 		medium: pixelToRem(20),
-		large: pixelToRem(24),
+		large: pixelToRem(25),
 	},
 	fontWeights: {
 		light: 300,
@@ -23,9 +23,13 @@ const theme: DefaultTheme = {
 	},
 	colors: {
 		white: '#FFFFFF',
+		gray: '#808080',
 		lightgray: '#D9D9D9',
 		deepgray: '#383535',
 		black: '#000000',
+	},
+	device: {
+		laptop: `screen and (min-width: 480px)`,
 	},
 };
 
