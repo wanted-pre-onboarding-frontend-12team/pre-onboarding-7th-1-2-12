@@ -1,3 +1,6 @@
+// Feature Components
+export { default as AdsBanner } from './feature/AdsBanner';
+
 // Layout Components
 export { default as Layout } from './layout';
 export { default as Header } from './layout/Header';

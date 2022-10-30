@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
-import { Avatar } from '../components';
+import { Avatar, AdsBanner } from '../components';
 import { checkArray } from '../utils/checkArray';
 import ROUTE_PATH from './routePath';
 
@@ -21,6 +21,7 @@ export default function Router() {
 						imgSrc="https://avatars.githubusercontent.com/u/50790145?v=4"
 						borderRadius="50%"
 					/>
+					<AdsBanner />
 				</Div>
 			),
 		},
