@@ -7,11 +7,11 @@ import { GlobalStyle, theme } from './styles';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
-			<BrowserRouter>
+		<BrowserRouter>
+			<ThemeProvider theme={theme}>
+				<GlobalStyle />
 				<App />
-			</BrowserRouter>
-		</ThemeProvider>
+			</ThemeProvider>
+		</BrowserRouter>
 	</React.StrictMode>,
 );
