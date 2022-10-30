@@ -3,14 +3,13 @@ import styled from 'styled-components';
 import { Avatar } from '../components';
 import { checkArray } from '../utils/checkArray';
 import ROUTE_PATH from './routePath';
-import IssueList from '../pages/IssueList';
 
 export default function Router() {
 	const routeList = [
 		{
 			id: 1,
 			path: ROUTE_PATH.MAIN,
-			element: <IssueList />,
+			element: <div>메인 페이지</div>,
 		},
 		{
 			id: 2,
