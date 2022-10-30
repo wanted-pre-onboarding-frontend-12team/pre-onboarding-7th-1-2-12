@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { Avatar, AdsBanner } from '../components';
 import { checkArray } from '../utils/checkArray';
 import ROUTE_PATH from './routePath';
-import Error from '../pages/Error';
-import IssueList from '../pages/IssueList';
+import { IssueList, IssueDetail, Error } from '../pages';
 
 export default function Router() {
 	const routeList = [
@@ -16,16 +15,7 @@ export default function Router() {
 		{
 			id: 2,
 			path: ROUTE_PATH.DETAIL,
-			element: (
-				<Div>
-					<Avatar
-						href="https://github.com/youngminss/"
-						imgSrc="https://avatars.githubusercontent.com/u/50790145?v=4"
-						borderRadius="50%"
-					/>
-					<AdsBanner />
-				</Div>
-			),
+			element: <IssueDetail />,
 		},
 		{
 			id: 3,
