@@ -2,7 +2,7 @@ import { CSSProperties } from 'styled-components';
 import { TitleLayout } from './styled';
 
 type Props = {
-	children: string;
+	children: React.ReactNode;
 	style?: CSSProperties;
 };
 
