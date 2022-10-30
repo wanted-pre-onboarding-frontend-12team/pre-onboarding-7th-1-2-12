@@ -80,7 +80,6 @@ const IssueProvider = ({ children }: Props) => {
 
 	if (loading) return <Loading />;
 	if (error) return <Error />;
-	console.log(issue);
 
 	return <IssueContext.Provider value={{ issueList, newUserList, setTarget, loadingMessage }}>{children}</IssueContext.Provider>;
 };
