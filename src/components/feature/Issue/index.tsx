@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CommonTitle from '../../../shared/Title';
-import { IssueWriter, IssueComment, IssueTime, IssueNum } from '../../';
+import { IssueWriter, IssueComment, IssueTime, IssueNumber } from '../../';
 import { IssueLayout, BorderLine } from './styled';
 
 export default function Issue({ issueItem, userItem }: any) {
@@ -13,7 +13,7 @@ export default function Issue({ issueItem, userItem }: any) {
 		<IssueLayout>
 			<div className="title">
 				<CommonTitle style={style}>{title}</CommonTitle>
-				<IssueNum issueNumber={number} />
+				<IssueNumber issueNumber={number} />
 			</div>
 			<IssueWriter writerName={login} />
 			<div className="IssueInfo">
