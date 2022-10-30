@@ -26,5 +26,8 @@ declare module 'styled-components' {
 			deepgray: '#383535';
 			black: '#000000';
 		};
+		device: {
+			laptop: string;
+		};
 	}
 }
