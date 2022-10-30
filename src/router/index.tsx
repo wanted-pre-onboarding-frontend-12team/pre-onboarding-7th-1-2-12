@@ -3,13 +3,15 @@ import styled from 'styled-components';
 import { Avatar, AdsBanner } from '../components';
 import { checkArray } from '../utils/checkArray';
 import ROUTE_PATH from './routePath';
+import Error from '../pages/Error';
+import IssueList from '../pages/IssueList';
 
 export default function Router() {
 	const routeList = [
 		{
 			id: 1,
 			path: ROUTE_PATH.MAIN,
-			element: <div>메인 페이지</div>,
+			element: <IssueList />,
 		},
 		{
 			id: 2,
@@ -28,7 +30,7 @@ export default function Router() {
 		{
 			id: 3,
 			path: ROUTE_PATH.ERROR,
-			element: <div>에러 페이지</div>,
+			element: <Error />,
 		},
 	];
 
