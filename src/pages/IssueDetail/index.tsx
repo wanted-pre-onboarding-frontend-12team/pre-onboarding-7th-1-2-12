@@ -1,24 +1,45 @@
-import { Avatar, IssueComment, IssueNumber, IssueTime, IssueWriter } from '../../components';
-import { BorderLine } from '../../components/feature/Issue/styled';
-import Title from '../../shared/Title';
+import { useEffect, useState } from 'react';
+import { Params, useParams } from 'react-router-dom';
+import IssueHeader, { IssueItem } from '../../components/feature/IssueHeader';
 import { DetailLayout } from './styled';
+import { getDetailIssues } from '../../apis/Issue';
+import { AxiosResponse } from 'axios';
 
 export default function IssueDetail() {
-	const html_url = 'https://github.com/youngminss/';
-	const avartar_url = 'https://avatars.githubusercontent.com/u/50790145?v=4';
-	const writerName = 'writerName';
-	const issueTime = '2022-10-28T19:15:35Z';
-	const issueNumber = 112233;
+	const { issueNumber } = useParams<Params>();
+	const [issueData, setIssueData] = useState<IssueItem>();
+
+	console.log(issueData);
+
+	const getDetail = async (issueNumber: string) => {
+		let res: AxiosResponse;
+		try {
+			res = await getDetailIssues(issueNumber);
+			setIssueData(res.data);
+		} catch (err) {
+			alert(err);
+		}
+	};
+
+	useEffect(() => {
+		if (issueNumber) {
+			getDetail(issueNumber);
+		}
+	}, []);
+
 	return (
 		<DetailLayout>
-			<Avatar href={html_url} imgSrc={avartar_url} borderRadius="50%" />
-			<IssueWriter writerName={writerName} />
-			<IssueTime writeTime={issueTime} />
-			<Title>css 적용이 안되는 문제.......</Title>
-			<IssueNumber issueNumber={issueNumber} />
-			<IssueComment commentCount={121} />
-			<BorderLine />
-			{/* <IssueBody/> */}
+			{issueData && (
+				<IssueHeader
+					number={issueData.number}
+					title={issueData.title}
+					created_at={issueData.created_at}
+					login={issueData.user.login}
+					avatar_url={issueData.user.avatar_url}
+					comments={issueData.comments}
+					body={issueData.body}
+				/>
+			)}
 		</DetailLayout>
 	);
 }
