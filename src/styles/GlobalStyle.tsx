@@ -9,6 +9,10 @@ const GlobalStyle = styled.createGlobalStyle`
 	*::after {
 		box-sizing: border-box;
 	}
+
+	body {
+		font-size: 16px;
+	}
 `;
 
 export default GlobalStyle;

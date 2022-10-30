@@ -1,14 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import IssueList from './pages/IssueList';
+import { Layout } from './components';
+import Router from './router';
 
-function App() {
+export default function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<IssueList />} />
-			</Routes>
-		</BrowserRouter>
+		<Layout>
+			<Router />
+		</Layout>
 	);
 }
-
-export default App;
