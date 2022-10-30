@@ -9,7 +9,7 @@ export default function IssueList() {
 		<>
 			{issueList &&
 				issueList.map((issueItem: any, index: number) => {
-					return <Issue key={issueItem.id} issueItem={issueItem} userItem={newUserList[index]} />;
+					return <Issue key={index} issueItem={issueItem} userItem={newUserList[index]} />;
 				})}
 		</>
 	);
