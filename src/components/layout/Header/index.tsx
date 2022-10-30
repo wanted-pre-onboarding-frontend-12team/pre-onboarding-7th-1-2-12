@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { HeaderWrapper } from './styled';
+import Title from '../../../shared/Title';
 
 export default function Header() {
 	const navigate = useNavigate();
@@ -15,7 +16,9 @@ export default function Header() {
 						fill="white"
 					/>
 				</svg>
-				<span onClick={() => navigate('/')}>Organization Name / Repository Name</span>
+				<span onClick={() => navigate('/')}>
+					<Title style={{ fontSize: '1.5rem', paddingTop: '1rem' }}>Angular / Angular-cli</Title>
+				</span>
 			</div>
 		</HeaderWrapper>
 	);
