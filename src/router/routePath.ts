@@ -4,7 +4,7 @@ type PATH = Record<Pages, string>;
 
 const ROUTE_PATH: PATH = {
 	MAIN: '/',
-	DETAIL: '/detail',
+	DETAIL: '/detail/:issueNumber',
 	ERROR: '*',
 };
 
