@@ -1,5 +1,14 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import IssueList from './pages/IssueList';
+
 function App() {
-	return <div className="App">Hello !</div>;
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<IssueList />} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
