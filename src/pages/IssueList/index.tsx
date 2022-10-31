@@ -3,6 +3,7 @@ import Issue from '../../components/feature/Issue';
 import { IssueContext } from '../../constants/IssueProvider';
 import { MainLayout } from './styled';
 import { AdsBanner } from '../../components';
+import { checkArray } from '../../utils/checkArray';
 
 export default function IssueList() {
 	const { issueList, newUserList, setTarget, loadingMessage }: any = useContext(IssueContext);
@@ -10,13 +11,13 @@ export default function IssueList() {
 
 	return (
 		<MainLayout>
-			{issueList &&
+			{checkArray(issueList) &&
 				issueList.map((issueItem: any, index: number) => {
 					return index === isAdPositon ? (
-						<>
+						<div key={index}>
 							<AdsBanner />
-							<Issue key={index} issueItem={issueItem} userItem={newUserList[index]} />
-						</>
+							<Issue issueItem={issueItem} userItem={newUserList[index]} />
+						</div>
 					) : (
 						<Issue key={index} issueItem={issueItem} userItem={newUserList[index]} />
 					);
