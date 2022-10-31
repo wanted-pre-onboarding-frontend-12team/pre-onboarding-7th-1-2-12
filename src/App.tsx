@@ -1,5 +1,16 @@
-function App() {
-	return <div className="App">Hello !</div>;
-}
+import { Layout } from './components';
+import Router from './router';
+import IssueProvider from './constants/IssueProvider';
+import StatusProvider from './constants/StatusProvider';
 
-export default App;
+export default function App() {
+	return (
+		<StatusProvider>
+			<IssueProvider>
+				<Layout>
+					<Router />
+				</Layout>
+			</IssueProvider>
+		</StatusProvider>
+	);
+}
