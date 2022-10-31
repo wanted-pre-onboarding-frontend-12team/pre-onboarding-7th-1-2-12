@@ -109,6 +109,7 @@ yarn run start
  ┃ ┣ ┗ 📂Loading
  ┃ ┃ ┃ ┗ 📜index.tsx
  ┃ ┣ 📂shared
+ ┃ ┃ ┃ ┗ 📜index.tsx
  ┃ ┃ ┗ 📜Anchor
  ┃ ┃ ┃ ┗ 📜index.tsx
  ┃ ┃ ┗ 📜Avatar
@@ -125,6 +126,7 @@ yarn run start
  ┃ ┃ ┗ 📜index.ts
  ┃ ┗ 📂IssueList
  ┃ ┗ 📜index.ts
+ ┃ ┗ 📜useInfinityScroll.tsx
  ┣ 📂models
  ┃ ┗ 📜issue.ts
  ┣ 📂pages
