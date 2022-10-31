@@ -109,7 +109,6 @@ yarn run start
  ┃ ┣ ┗ 📂Loading
  ┃ ┃ ┃ ┗ 📜index.tsx
  ┃ ┣ 📂shared
- ┃ ┃ ┃ ┗ 📜index.tsx
  ┃ ┃ ┗ 📜Anchor
  ┃ ┃ ┃ ┗ 📜index.tsx
  ┃ ┃ ┗ 📜Avatar
