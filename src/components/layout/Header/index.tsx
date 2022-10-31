@@ -17,7 +17,7 @@ export default function Header() {
 					/>
 				</svg>
 				<span onClick={() => navigate('/')}>
-					<Title style={{ fontSize: '1.5rem', paddingTop: '1rem' }}>Angular / Angular-cli</Title>
+					<Title>Angular / Angular-cli</Title>
 				</span>
 			</div>
 		</HeaderWrapper>

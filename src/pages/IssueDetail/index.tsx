@@ -30,7 +30,7 @@ export default function IssueDetail() {
 
 	return (
 		<DetailLayout>
-			{issueData && (
+			{issueData && issueData.user && (
 				<div>
 					<IssueHeader
 						number={issueData.number}
