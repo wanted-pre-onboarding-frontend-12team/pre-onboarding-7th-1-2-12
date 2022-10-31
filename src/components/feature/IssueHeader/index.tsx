@@ -30,7 +30,7 @@ export default function IssueHeader(props: IssueItem) {
 			</div>
 			<div className="issueInfo">
 				<div>
-					<CommonTitle style={{ fontSize: '1.5rem' }}>{props.title}</CommonTitle>
+					<CommonTitle>{props.title}</CommonTitle>
 					<IssueNumber issueNumber={props.number} />
 				</div>
 				<IssueComment commentCount={props.comments} />

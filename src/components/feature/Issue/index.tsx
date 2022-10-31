@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Title from '../../../shared/Title';
 import { IssueWriter, IssueComment, IssueTime, IssueNumber } from '../../';
 import { IssueLayout, BorderLine } from './styled';
