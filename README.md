@@ -6,13 +6,12 @@
 
 - 진행 기간 : 2022-10-29 ~ 2022-10-31  
 
-- 과제 의도 설명 1
 
 <br />
 
 ## 데모 링크
 
-[🚀 GO TO DEMO]()
+[🚀 GO TO DEMO](https://super-parfait-94f2ba.netlify.app/)
 
 <br />
 
@@ -81,6 +80,39 @@ yarn run start
 
 ## 레포지토리 구조(src)
 
+```jsx
+📦src
+ ┣ 📂apis
+ ┃ ┗  📜issue.ts
+ ┣ 📂asset
+ ┣ 📂components
+ ┃ ┣ 📂feature
+ ┃ ┣ ┗ 📜IssueHeader.tsx
+ ┃ ┣ 📜IssueItem.tsx
+ ┃ ┣ 📜IssueLayout.tsx
+ ┃ ┣ 📜IssueList.tsx
+ ┃ ┣ 📜IssueLoader.tsx
+ ┃ ┣ 📜IssueRouter.tsx
+ ┃ ┣ 📜MainRouter.tsx
+ ┃ ┗ 📜Providers.tsx
+ ┣ 📂contexts
+ ┃ ┗ 📜IssuesContext.tsx
+ ┣ 📂hooks
+ ┃ ┗ 📜useIssues.ts
+ ┣ 📂models
+ ┃ ┗ 📜issue.ts
+ ┣ 📂pages
+ ┃ ┣ 📜ErrorPage.tsx
+ ┃ ┣ 📜IssueDetailPage.tsx
+ ┃ ┗ 📜IssuesPage.tsx
+ ┣ 📂utils
+ ┃ ┣ 📜env.ts
+ ┃ ┗ 📜parseIssue.ts
+ ┣ 📜App.tsx
+ ┣ 📜index.tsx
+ ┗ 📜react-app-env.d.ts
+```
+
 
 ## 기술 스택
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=black">
@@ -94,16 +126,3 @@ yarn run start
 <img src="https://img.shields.io/badge/eslint-181717?style=for-the-badge&logo=eslint&logoColor=white">
 <img src="https://img.shields.io/badge/react-router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
 
-
-`Context API`
-
-+ 
-
-`useReducer`
-
-+
-
-
-`반응형 웹`
-
-+ 반응형 웹은 웹사이트에 다양한 디바이스로 접속할 때 디스플레이의 크기에 따라 화면이 자동으로 맞춰집니다. 모바일과 같이 작은 화면에서는 작은 글씨로, PC와 같이 큰 화면에서는 큰 글씨로 디자인을 정하고, CSS IN JS 라이브러리인 Styled-Component를 사용했고 미디어쿼리로 
