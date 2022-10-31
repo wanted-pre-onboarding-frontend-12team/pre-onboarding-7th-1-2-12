@@ -87,30 +87,69 @@ yarn run start
  ┣ 📂asset
  ┣ 📂components
  ┃ ┣ 📂feature
- ┃ ┣ ┗ 📜IssueHeader.tsx
- ┃ ┣ 📜IssueItem.tsx
- ┃ ┣ 📜IssueLayout.tsx
- ┃ ┣ 📜IssueList.tsx
- ┃ ┣ 📜IssueLoader.tsx
- ┃ ┣ 📜IssueRouter.tsx
- ┃ ┣ 📜MainRouter.tsx
- ┃ ┗ 📜Providers.tsx
- ┣ 📂contexts
- ┃ ┗ 📜IssuesContext.tsx
- ┣ 📂hooks
- ┃ ┗ 📜useIssues.ts
+ ┃ ┃ ┗ 📂AdsBanner
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂Issue
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂IssueComment
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂IssueHeader
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂IssueNumber
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂IssueTime
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂IssueWriter
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂MarkdownRenderer
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂layout
+ ┃ ┃ ┗ 📂Header
+ ┃ ┃ ┃  ┗ 📜index.tsx
+ ┃ ┣ ┗ 📂Loading
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┣ 📂shared
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜Anchor
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜Avatar
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📜index.tsx
+ ┣ 📂constants 
+ ┃ ┗ 📜IssueProvider.tsx
+ ┃ ┗ 📜StatusProvider.tsx
+ ┃ ┗ 📜useStatus.ts
+ ┣ 📂pages
+ ┃ ┗ 📂Error
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┗ 📂IssueDetail
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┗ 📂IssueList
+ ┃ ┗ 📜index.ts
  ┣ 📂models
  ┃ ┗ 📜issue.ts
  ┣ 📂pages
  ┃ ┣ 📜ErrorPage.tsx
  ┃ ┣ 📜IssueDetailPage.tsx
  ┃ ┗ 📜IssuesPage.tsx
+ ┣ 📂router
+ ┃ ┣ 📜index.tsx
+ ┃ ┣ 📜routePath.ts
+ ┣ 📂shared
+ ┃ ┣ 📜Title
+ ┃ ┗ 📜index.ts
+ ┣ 📂styles
+ ┃ ┣ 📜GlobalStyle.tsx
+ ┃ ┣ 📜index.ts
+ ┃ ┣ 📜styled.d.ts
+ ┃ ┣ 📜theme.ts
  ┣ 📂utils
- ┃ ┣ 📜env.ts
- ┃ ┗ 📜parseIssue.ts
+ ┃ ┣ 📜checkArray.ts
+ ┃ ┣ 📜dateFormat.ts
+ ┃ ┣ 📜interface.ts
  ┣ 📜App.tsx
  ┣ 📜index.tsx
- ┗ 📜react-app-env.d.ts
+ ┗ 📜vite-enc.d.ts
 ```
 
 
