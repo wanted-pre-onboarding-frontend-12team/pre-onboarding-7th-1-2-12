@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const AdsBannerContainer = styled.div`
 	display: flex;
 	width: 100%;
+	margin-bottom: 30px;
 	background-color: ${({ theme }) => theme.colors.white};
 `;
 
