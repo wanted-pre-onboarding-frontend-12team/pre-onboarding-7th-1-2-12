@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { Avatar, AdsBanner } from '../components';
 import { checkArray } from '../utils/checkArray';
 import ROUTE_PATH from './routePath';
-import Error from '../pages/Error';
-import IssueList from '../pages/IssueList';
-import IssueDetail from '../pages/IssueDetail';
+import { IssueList, IssueDetail, Error } from '../pages';
 
 export default function Router() {
 	const routeList = [

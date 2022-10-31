@@ -1,3 +1,4 @@
+import { MarkdownRenderer } from '../../components';
 import { useEffect, useState } from 'react';
 import { Params, useParams } from 'react-router-dom';
 import IssueHeader, { IssueItem } from '../../components/feature/IssueHeader';
@@ -40,6 +41,7 @@ export default function IssueDetail() {
 					body={issueData.body}
 				/>
 			)}
+      <MarkdownRenderer markdown={issueData.body} />
 		</DetailLayout>
 	);
 }

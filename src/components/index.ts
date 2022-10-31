@@ -1,5 +1,6 @@
 // Feature Components
 export { default as AdsBanner } from './feature/AdsBanner';
+export { default as MarkdownRenderer } from './feature/MarkdownRenderer';
 
 // Layout Components
 export { default as Layout } from './layout';
