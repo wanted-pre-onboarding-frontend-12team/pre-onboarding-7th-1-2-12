@@ -10,8 +10,6 @@ export default function IssueDetail() {
 	const { issueNumber } = useParams<Params>();
 	const [issueData, setIssueData] = useState<IssueItem>();
 
-	console.log(issueData);
-
 	const getDetail = async (issueNumber: string) => {
 		let res: AxiosResponse;
 		try {
