@@ -31,17 +31,19 @@ export default function IssueDetail() {
 	return (
 		<DetailLayout>
 			{issueData && (
-				<IssueHeader
-					number={issueData.number}
-					title={issueData.title}
-					created_at={issueData.created_at}
-					login={issueData.user.login}
-					avatar_url={issueData.user.avatar_url}
-					comments={issueData.comments}
-					body={issueData.body}
-				/>
+				<div>
+					<IssueHeader
+						number={issueData.number}
+						title={issueData.title}
+						created_at={issueData.created_at}
+						login={issueData.user.login}
+						avatar_url={issueData.user.avatar_url}
+						comments={issueData.comments}
+						body={issueData.body}
+					/>
+					<MarkdownRenderer markdown={issueData.body} />
+				</div>
 			)}
-      <MarkdownRenderer markdown={issueData.body} />
 		</DetailLayout>
 	);
 }
