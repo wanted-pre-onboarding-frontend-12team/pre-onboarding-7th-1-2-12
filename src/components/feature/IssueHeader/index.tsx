@@ -11,6 +11,7 @@ export type IssueItem = {
 	login: string;
 	body: string;
 	user?: UserItem;
+	avatar_url: string;
 };
 
 export type UserItem = {
