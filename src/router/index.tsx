@@ -1,32 +1,39 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import styled from 'styled-components';
+import { Avatar, AdsBanner } from '../components';
 import { checkArray } from '../utils/checkArray';
-
 import ROUTE_PATH from './routePath';
+import { IssueList, IssueDetail, Error } from '../pages';
 
 export default function Router() {
 	const routeList = [
 		{
+			id: 1,
 			path: ROUTE_PATH.MAIN,
-			element: <div>메인 페이지</div>,
+			element: <IssueList />,
 		},
 		{
+			id: 2,
 			path: ROUTE_PATH.DETAIL,
-			element: <div>상세 페이지</div>,
+			element: <IssueDetail />,
 		},
 		{
+			id: 3,
 			path: ROUTE_PATH.ERROR,
-			element: <div>에러 페이지</div>,
+			element: <Error />,
 		},
 	];
 
 	return (
-		<BrowserRouter>
-			<Routes>
-				{checkArray(routeList) &&
-					routeList.map(({ path, element }) => {
-						return <Route path={path} element={element} />;
-					})}
-			</Routes>
-		</BrowserRouter>
+		<Routes>
+			{checkArray(routeList) &&
+				routeList.map(({ id, path, element }) => {
+					return <Route key={id} path={path} element={element} />;
+				})}
+		</Routes>
 	);
 }
+
+const Div = styled.div`
+	height: 80px;
+`;
