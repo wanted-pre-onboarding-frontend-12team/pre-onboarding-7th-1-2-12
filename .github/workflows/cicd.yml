@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: npm ci
-      - run: npm run build
+      - run: yarn install --immutable --immutable-cache --check-cache
+      - run: yarn run build
       - run: echo "GITHUB ACTION RUN BUILD"
